@@ -27,6 +27,7 @@ public class AutenticacaoController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+    @Autowired
     private TokenAPIService tokenAPIService;
 
     @PostMapping
