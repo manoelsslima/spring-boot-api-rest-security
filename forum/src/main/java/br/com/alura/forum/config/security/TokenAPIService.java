@@ -30,4 +30,14 @@ public class TokenAPIService {
                 .signWith(SignatureAlgorithm.HS256, secret)
                 .compact();
     }
+
+    public boolean isTokenValido(String token) {
+        try {
+            // tem que informar a chave usada para criptografar
+            Jwts.parser().setSigningKey(this.secret).parseClaimsJws(token);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

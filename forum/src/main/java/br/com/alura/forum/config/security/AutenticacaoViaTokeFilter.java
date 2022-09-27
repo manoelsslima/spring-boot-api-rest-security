@@ -12,10 +12,17 @@ import java.io.IOException;
  * Does the authentication using a JWT token.
  */
 public class AutenticacaoViaTokeFilter extends OncePerRequestFilter {
+    private TokenAPIService tokenApiService;
+
+    public AutenticacaoViaTokeFilter(TokenAPIService tokenApiService) {
+        this.tokenApiService = tokenApiService;
+    }
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String token = recuperarToken(request);
-        System.out.println(token);
+        boolean valido = this.tokenApiService.isTokenValido(token);
+        System.out.println("Token válido: " + valido);
         filterChain.doFilter(request, response);
     }
 
