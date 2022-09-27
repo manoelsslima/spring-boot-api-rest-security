@@ -25,6 +25,7 @@ import javax.validation.Valid;
 @RequestMapping("/auth")
 public class AutenticacaoController {
 
+    // dispara o processo de autenticação
     @Autowired
     private AuthenticationManager authenticationManager;
     @Autowired
