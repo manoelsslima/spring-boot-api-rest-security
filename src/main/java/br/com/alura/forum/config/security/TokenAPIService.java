@@ -45,7 +45,7 @@ public class TokenAPIService {
     /**
      * Recupera o id do usuário logado.
      *
-     * @param token
+     * @param token token
      * @return id do usuário logado.
      */
     public Long getIdUsuario(String token) {
