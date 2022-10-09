@@ -16,11 +16,11 @@ import java.util.Optional;
 /**
  * Does the authentication using a JWT token.
  */
-public class AutenticacaoViaTokeFilter extends OncePerRequestFilter {
+public class AutenticacaoViaTokenFilter extends OncePerRequestFilter {
     private TokenAPIService tokenApiService;
     private UsuarioRepository usuarioRepository;
 
-    public AutenticacaoViaTokeFilter(TokenAPIService tokenApiService, UsuarioRepository usuarioRepository) {
+    public AutenticacaoViaTokenFilter(TokenAPIService tokenApiService, UsuarioRepository usuarioRepository) {
         this.tokenApiService = tokenApiService;
         this.usuarioRepository = usuarioRepository;
     }
